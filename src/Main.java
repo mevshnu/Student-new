@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class Main {
     static Scanner sc = new Scanner(System.in);
-    ArrayList<Student> studentlist = new ArrayList<Student>();
+    static ArrayList<Student> studentlist = new ArrayList<Student>();
     //ArrayList<Student> studentlist = new ArrayList<>();
 
     public static void main(String[] args)
@@ -15,6 +15,29 @@ public class Main {
                 "enter 5 to exit");
         int x = sc.nextInt();
 
+    }
+    static void add()
+    {
+        System.out.println("Enter name");
+        String name=sc.next();
+        System.out.println("Enter admission no");
+        int admissionNo = sc.nextInt();
+        System.out.println("Enter roll no");
+        int rollNo = sc.nextInt();
+        System.out.println("Enter college name");
+        String college = sc.next();
+        Student st = new Student(name,admissionNo,rollNo,college);
+        studentlist.add(st);
+    }
+    static void view()
+    {
+        for(int i=0;i< studentlist.size();i++)
+        {
+            System.out.println("Name: "+studentlist.get(i).name);
+            System.out.println("admission no:"+studentlist.get(i).admissionNo);
+            System.out.println("roll no "+studentlist.get(i).rollNo);
+            System.out.println("collage name"studentlist.get(i).college);
+        }
     }
 }
 class Student
