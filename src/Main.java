@@ -14,6 +14,27 @@ public class Main {
         System.out.println("enter 4 to delete data\n" +
                 "enter 5 to exit");
         int x = sc.nextInt();
+        switch (x)
+        {
+            case 1:
+                add();
+                break;
+            case 2:
+                view();
+                break;
+            case 3:
+                search();
+                break;
+            case 4:
+                delete();
+                break;
+            case 5:
+                System.exit(0);
+                break;
+            default:
+                System.out.println("Invalid choice");
+                break;
+        }
 
     }
     static void add()
@@ -28,6 +49,7 @@ public class Main {
         String college = sc.next();
         Student st = new Student(name,admissionNo,rollNo,college);
         studentlist.add(st);
+        System.out.println("student added");
     }
     static void view()
     {
@@ -36,7 +58,41 @@ public class Main {
             System.out.println("Name: "+studentlist.get(i).name);
             System.out.println("admission no:"+studentlist.get(i).admissionNo);
             System.out.println("roll no "+studentlist.get(i).rollNo);
-            System.out.println("collage name"studentlist.get(i).college);
+            System.out.println("collage name"+studentlist.get(i).college);
+        }
+    }
+    static void search()
+    {
+    System.out.println("ener admission number");
+    int u = sc.nextInt();
+    int flag =0;
+        for(int i=0;i< studentlist.size();i++)
+        {
+            if(u == studentlist.get(i).admissionNo)
+            {
+                System.out.println("Name: "+studentlist.get(i).name);
+                System.out.println("admission no:"+studentlist.get(i).admissionNo);
+                System.out.println("roll no "+studentlist.get(i).rollNo);
+                System.out.println("collage name"+studentlist.get(i).college);
+                flag=1;
+            }
+            if (flag==0)
+            {
+                System.out.println("not found");
+            }
+        }
+    }
+    static void delete()
+    {
+        System.out.println("ener admission number");
+        int u = sc.nextInt();
+        for(int i=0;i< studentlist.size();i++) {
+            if (u == studentlist.get(i).admissionNo)
+            {
+            studentlist.remove(i);
+                System.out.println("Student removed");
+                break;
+            }
         }
     }
 }
