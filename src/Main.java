@@ -8,34 +8,34 @@ public class Main {
 
     public static void main(String[] args)
     {
-        System.out.println("enter 1 to add data");
-        System.out.println("enter 2 to view data");
-        System.out.println("enter 3 to search data");
-        System.out.println("enter 4 to delete data\n" +
-                "enter 5 to exit");
-        int x = sc.nextInt();
-        switch (x)
-        {
-            case 1:
-                add();
-                break;
-            case 2:
-                view();
-                break;
-            case 3:
-                search();
-                break;
-            case 4:
-                delete();
-                break;
-            case 5:
-                System.exit(0);
-                break;
-            default:
-                System.out.println("Invalid choice");
-                break;
+        while(true) {
+            System.out.println("enter 1 to add data");
+            System.out.println("enter 2 to view data");
+            System.out.println("enter 3 to search data");
+            System.out.println("enter 4 to delete data\n" +
+                    "enter 5 to exit");
+            int x = sc.nextInt();
+            switch (x) {
+                case 1:
+                    add();
+                    break;
+                case 2:
+                    view();
+                    break;
+                case 3:
+                    search();
+                    break;
+                case 4:
+                    delete();
+                    break;
+                case 5:
+                    System.exit(0);
+                    break;
+                default:
+                    System.out.println("Invalid choice");
+                    break;
+            }
         }
-
     }
     static void add()
     {
@@ -63,7 +63,7 @@ public class Main {
     }
     static void search()
     {
-    System.out.println("ener admission number");
+    System.out.println("enter admission number");
     int u = sc.nextInt();
     int flag =0;
         for(int i=0;i< studentlist.size();i++)
@@ -76,10 +76,11 @@ public class Main {
                 System.out.println("collage name"+studentlist.get(i).college);
                 flag=1;
             }
-            if (flag==0)
-            {
-                System.out.println("not found");
-            }
+
+        }
+        if (flag==0)
+        {
+            System.out.println("not found");
         }
     }
     static void delete()
